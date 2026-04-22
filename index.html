@@ -4,14 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Johanna Salinas | Gestoría del Automotor</title>
-  <meta
-    name="description"
-    content="Gestoría del automotor en Mendoza y todo el país. Transferencias, informes, denuncias, radicación, sellados, asesoramiento y atención por WhatsApp."
-  />
+  <meta name="description" content="Gestoría del automotor en Mendoza y todo el país. Transferencias, informes, denuncias, radicación, sellados, asesoramiento y atención por WhatsApp.">
   <style>
     :root{
       --navy:#173b73;
-      --navy-dark:#0f2d57;
+      --navy-dark:#102b52;
       --blue:#2d74db;
       --blue-soft:#edf4ff;
       --text:#223f66;
@@ -36,7 +33,6 @@
     }
 
     a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
     h1,h2,h3,h4,p{margin:0}
 
     .container{
@@ -55,7 +51,6 @@
       transition:transform .2s ease, box-shadow .2s ease;
       cursor:pointer;
     }
-
     .btn:hover{transform:translateY(-2px)}
 
     .btn-primary{
@@ -67,8 +62,39 @@
     .btn-secondary{
       color:var(--navy-dark);
       background:#fff;
-      border:1px solid rgba(15,45,87,.1);
+      border:1px solid rgba(15,45,87,.10);
       box-shadow:var(--shadow);
+    }
+
+    .section{padding:82px 0}
+    .center{text-align:center}
+
+    .eyebrow{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(45,116,219,.10);
+      color:var(--blue);
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+
+    .section-title{
+      font-size:clamp(1.9rem, 4vw, 3rem);
+      line-height:1.08;
+      letter-spacing:-.03em;
+      color:var(--navy-dark);
+      margin:16px 0 14px;
+    }
+
+    .section-copy{
+      color:var(--muted);
+      line-height:1.8;
+      font-size:1.03rem;
+      max-width:760px;
+      margin:0 auto;
     }
 
     /* NAV */
@@ -92,16 +118,53 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:16px;
+      gap:14px;
       min-width:0;
     }
 
-    .brand-logo{
-      width:160px;
-      max-width:42vw;
-      height:auto;
-      object-fit:contain;
+    .brand-logo-wrap{
+      display:flex;
+      align-items:flex-end;
+      gap:8px;
       flex:0 0 auto;
+    }
+
+    .brand-js{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:3.3rem;
+      line-height:.75;
+      letter-spacing:-.08em;
+      color:var(--navy);
+      font-weight:700;
+    }
+
+    .brand-js .s{
+      color:var(--blue);
+    }
+
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+    }
+
+    .brand-copy strong{
+      display:block;
+      color:var(--navy-dark);
+      font-size:1rem;
+      line-height:1.1;
+      letter-spacing:.06em;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:500;
+    }
+
+    .brand-copy span{
+      color:var(--blue);
+      font-size:.75rem;
+      line-height:1.2;
+      letter-spacing:.26em;
+      text-transform:uppercase;
+      font-weight:700;
     }
 
     .menu{
@@ -119,9 +182,7 @@
       opacity:.95;
     }
 
-    .menu a.link:hover{
-      color:var(--blue);
-    }
+    .menu a.link:hover{color:var(--blue)}
 
     .btn-top{
       padding:14px 24px;
@@ -130,7 +191,7 @@
       box-shadow:0 12px 24px rgba(22,141,70,.22);
     }
 
-    /* HERO */
+    /* HERO REAL, SIN IMAGEN PEGADA */
     .hero{
       position:relative;
       min-height:760px;
@@ -164,17 +225,89 @@
       padding:72px 0 80px;
     }
 
-    .hero-logo{
-      width:min(100%, 720px);
-      margin:0 auto 24px;
-      filter:drop-shadow(0 10px 22px rgba(15,45,87,.08));
+    .hero-logo-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin-bottom:24px;
+    }
+
+    .hero-js{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(6rem, 12vw, 9rem);
+      line-height:.75;
+      letter-spacing:-.08em;
+      font-weight:700;
+      color:var(--navy);
+    }
+
+    .hero-js .s{
+      color:var(--blue);
+    }
+
+    .hero-car{
+      width:180px;
+      height:22px;
+      position:relative;
+      margin-top:2px;
+      margin-bottom:18px;
+    }
+
+    .hero-car::before{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:2px;
+      height:0;
+      border-bottom:4px solid var(--navy);
+      border-radius:999px;
+      transform:skewX(-18deg);
+    }
+
+    .hero-car::after{
+      content:"";
+      position:absolute;
+      right:28px;
+      top:0;
+      width:42px;
+      height:14px;
+      border-top:4px solid var(--blue);
+      border-right:4px solid var(--blue);
+      transform:skewX(-35deg);
+    }
+
+    .hero-brand{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(2.5rem, 6vw, 4.4rem);
+      line-height:1;
+      color:var(--navy-dark);
+      letter-spacing:.06em;
+      margin-bottom:10px;
+      font-weight:500;
+    }
+
+    .hero-sub{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.32em;
+      color:var(--blue);
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .hero-sub2{
+      font-size:.95rem;
+      letter-spacing:.18em;
+      color:#586c86;
+      text-transform:uppercase;
     }
 
     .hero-kicker{
-      margin:8px 0 22px;
+      margin:34px 0 20px;
       font-size:1rem;
       letter-spacing:.24em;
-      color:#5d7088;
+      color:#586c86;
       text-transform:uppercase;
     }
 
@@ -208,39 +341,7 @@
       min-width:240px;
     }
 
-    /* SECCIONES */
-    .section{padding:82px 0}
-    .section-sm{padding:58px 0}
-    .center{text-align:center}
-
-    .eyebrow{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(45,116,219,.10);
-      color:var(--blue);
-      font-size:13px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-    }
-
-    .section-title{
-      font-size:clamp(1.9rem, 4vw, 3rem);
-      line-height:1.08;
-      letter-spacing:-.03em;
-      color:var(--navy-dark);
-      margin:16px 0 14px;
-    }
-
-    .section-copy{
-      color:var(--muted);
-      line-height:1.8;
-      font-size:1.03rem;
-      max-width:760px;
-      margin:0 auto;
-    }
-
+    /* GRID */
     .services-grid,
     .vehicle-grid,
     .testimonial-grid,
@@ -478,8 +579,8 @@
         height:62px;
       }
 
-      .brand-logo{
-        width:120px;
+      .brand-js{
+        font-size:2.8rem;
       }
 
       .hero{
@@ -490,17 +591,19 @@
         padding:50px 0 56px;
       }
 
-      .hero-logo{
-        width:min(100%, 360px);
-      }
-
       .hero-kicker{
         font-size:.82rem;
         letter-spacing:.14em;
       }
 
-      .hero-title{
-        font-size:2.2rem;
+      .hero-sub{
+        font-size:.78rem;
+        letter-spacing:.18em;
+      }
+
+      .hero-sub2{
+        font-size:.8rem;
+        letter-spacing:.10em;
       }
 
       .hero-text{
@@ -519,7 +622,13 @@
   <nav class="nav">
     <div class="container nav-wrap">
       <div class="brand">
-        <img src="hero-johanna.png" alt="Logo Johanna Salinas" class="brand-logo">
+        <div class="brand-logo-wrap">
+          <div class="brand-js">J<span class="s">S</span></div>
+        </div>
+        <div class="brand-copy">
+          <strong>JOHANNA SALINAS</strong>
+          <span>MANDATARIA NACIONAL</span>
+        </div>
       </div>
 
       <div class="menu">
@@ -534,7 +643,13 @@
 
   <section class="hero">
     <div class="hero-content">
-      <img src="hero-johanna.png" alt="Logo principal Johanna Salinas" class="hero-logo">
+      <div class="hero-logo-wrap">
+        <div class="hero-js">J<span class="s">S</span></div>
+        <div class="hero-car"></div>
+        <div class="hero-brand">JOHANNA SALINAS</div>
+        <div class="hero-sub">MANDATARIA NACIONAL</div>
+        <div class="hero-sub2">GESTORÍA DEL AUTOMOTOR</div>
+      </div>
 
       <div class="hero-kicker">GESTORÍA PROFESIONAL DEL AUTOMOTOR</div>
 
