@@ -707,100 +707,286 @@
         width:180px;
       }
     }
+ /* ===== PORTADA NUEVA ESTILO FOTO ===== */
+
+.nav-custom{
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(11,31,58,.06);
+}
+
+.nav-wrap-custom{
+  min-height: 74px;
+}
+
+.brand-custom{
+  gap: 10px;
+}
+
+.brand-logo-text{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+}
+
+.brand-js{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  line-height: .8;
+  color: #1d4f95;
+}
+
+.brand-line{
+  width: 42px;
+  height: 2px;
+  background: #9aa8bc;
+  margin-bottom: 8px;
+}
+
+.brand-copy-custom strong{
+  font-size: .98rem;
+  line-height: 1;
+  letter-spacing: .04em;
+}
+
+.brand-copy-custom span{
+  font-size: .74rem;
+  letter-spacing: .14em;
+  color: #5f6f84;
+}
+
+.menu-custom{
+  gap: 24px;
+}
+
+.menu-custom .link{
+  font-size: .92rem;
+  color: #334a68;
+}
+
+.btn-top-whatsapp{
+  background: #3f9a58;
+  color: #fff;
+  padding: 12px 20px;
+  box-shadow: 0 12px 24px rgba(63,154,88,.22);
+}
+
+/* HERO */
+
+.hero-custom{
+  position: relative;
+  min-height: 760px;
+  padding: 64px 0 70px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(238,246,255,.78), rgba(238,246,255,.78)),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(105,179,255,.30) 0%, rgba(255,255,255,.22) 40%, rgba(255,255,255,.08) 100%);
+}
+
+.hero-content{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 980px;
+}
+
+.hero-center-logo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom: 22px;
+}
+
+.hero-logo-js{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(5rem, 10vw, 8rem);
+  line-height: .85;
+  color: #245ea8;
+}
+
+.hero-logo-line{
+  width: 140px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1d4f95, #69b3ff);
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.hero-brand-name{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: #233f67;
+  margin: 0;
+}
+
+.hero-brand-sub{
+  margin-top: 8px;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .30em;
+  color: #4e6e97;
+}
+
+.hero-brand-sub2{
+  margin-top: 10px;
+  font-size: .9rem;
+  letter-spacing: .18em;
+  color: #5d6f87;
+}
+
+.hero-kicker-custom{
+  margin: 28px auto 18px;
+  font-size: .95rem;
+  letter-spacing: .22em;
+  color: #5d6f87;
+}
+
+.hero-main-title{
+  margin: 0 auto 18px;
+  max-width: 900px;
+  font-size: clamp(2.2rem, 5vw, 4.1rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  color: #24476f;
+}
+
+.hero-main-text{
+  max-width: 860px;
+  margin: 0 auto;
+  color: #4f627a;
+  line-height: 1.85;
+  font-size: 1.03rem;
+}
+
+.hero-actions-custom{
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hero-actions-custom .btn-primary{
+  background: #3f9a58;
+  box-shadow: 0 14px 28px rgba(63,154,88,.24);
+}
+
+.hero-actions-custom .btn-secondary{
+  background: rgba(255,255,255,.92);
+}
+
+@media (max-width: 760px){
+  .nav-wrap-custom{
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 0;
+  }
+
+  .menu-custom{
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .menu-custom .link{
+    display: none;
+  }
+
+  .hero-custom{
+    min-height: auto;
+    padding: 42px 0 54px;
+  }
+
+  .hero-brand-sub{
+    letter-spacing: .16em;
+  }
+
+  .hero-kicker-custom{
+    font-size: .82rem;
+    letter-spacing: .14em;
+  }
+
+  .hero-main-text{
+    font-size: .98rem;
+  }
+}
   </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="container nav-wrap">
-      <div class="brand">
-        <img src="hero-johanna.png" alt="Logo Johanna Salinas" class="brand-logo">
-        <div class="brand-copy">
-          <strong>Johanna Salinas</strong>
-          <span>Mandataria Nacional · Gestoría del Automotor</span>
-        </div>
+<nav class="nav nav-custom">
+  <div class="container nav-wrap nav-wrap-custom">
+    <div class="brand brand-custom">
+      <div class="brand-logo-text">
+        <span class="brand-js">JS</span>
+        <span class="brand-line"></span>
       </div>
-
-      <div class="menu">
-        <a class="link" href="#servicios">Servicios</a>
-        <a class="link" href="#vehiculos">Vehículos</a>
-        <a class="link" href="#testimonios">Testimonios</a>
-        <a class="link" href="#contacto">Contacto</a>
-        <a class="btn btn-primary" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank">WhatsApp</a>
+      <div class="brand-copy brand-copy-custom">
+        <strong>JOHANNA SALINAS</strong>
+        <span>MANDATARIA NACIONAL</span>
       </div>
     </div>
-  </nav>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-copy fade-up">
-          <img src="hero-johanna.png" alt="Imagen de marca Johanna Salinas" class="hero-mini-logo">
-
-          <span class="hero-kicker">Gestoría profesional del automotor</span>
-          <h1 class="hero-title">Trámites seguros, ágiles y con atención personalizada.</h1>
-          <p class="hero-text">
-            Atención en Mendoza y todo el país. Te acompaño para resolver trámites del automotor
-            con claridad, rapidez y respaldo profesional. Antes de comprar o vender, asesorate
-            para evitar errores, deudas y problemas futuros.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank">Consultar por WhatsApp</a>
-            <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
-          </div>
-
-          <div class="hero-notes">
-            <span>Confianza</span>
-            <span>Rapidez</span>
-            <span>Mendoza y todo el país</span>
-            <span>Atención flexible</span>
-          </div>
-        </div>
-
-        <div class="hero-card fade-up">
-          <img src="hero-johanna.png" alt="Portada visual Johanna Salinas">
-          <div class="hero-overlay">
-            <div class="hero-badge">Contacto directo por WhatsApp</div>
-
-            <div class="hero-points">
-              <div class="point">
-                <div class="point-icon">✓</div>
-                <div><strong>Confianza</strong><br>Gestión responsable y acompañamiento claro en cada trámite.</div>
-              </div>
-              <div class="point">
-                <div class="point-icon">⚡</div>
-                <div><strong>Rapidez</strong><br>Resolución ágil de consultas y trámites urgentes.</div>
-              </div>
-              <div class="point">
-                <div class="point-icon">✆</div>
-                <div><strong>Atención flexible</strong><br>Podés escribir en cualquier momento y te respondo a la brevedad.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="stats">
-        <div class="stat fade-up">
-          <strong>WhatsApp</strong>
-          <span>Contacto directo con mensaje automático listo para enviar.</span>
-        </div>
-        <div class="stat fade-up">
-          <strong>Mendoza + País</strong>
-          <span>Atención para clientes de Mendoza y de todo el país.</span>
-        </div>
-        <div class="stat fade-up">
-          <strong>Compra/Venta</strong>
-          <span>Asesoramiento previo para evitar problemas y errores.</span>
-        </div>
-        <div class="stat fade-up">
-          <strong>Urgencias</strong>
-          <span>Respuesta rápida para trámites que necesitás resolver cuanto antes.</span>
-        </div>
-      </div>
+    <div class="menu menu-custom">
+      <a class="link" href="#servicios">Servicios</a>
+      <a class="link" href="#vehiculos">Vehículos</a>
+      <a class="link" href="#testimonios">Testimonios</a>
+      <a class="link" href="#contacto">Contacto</a>
+      <a class="btn btn-top-whatsapp" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank">WhatsApp</a>
     </div>
-  </section>
+  </div>
+</nav>
+
+<section class="hero hero-custom">
+  <div class="hero-bg"></div>
+
+  <div class="container hero-content">
+    <div class="hero-center-logo">
+      <div class="hero-logo-js">JS</div>
+      <div class="hero-logo-line"></div>
+      <h1 class="hero-brand-name">JOHANNA SALINAS</h1>
+      <div class="hero-brand-sub">MANDATARIA NACIONAL</div>
+      <div class="hero-brand-sub2">GESTORÍA DEL AUTOMOTOR</div>
+    </div>
+
+    <div class="hero-kicker-custom">GESTORÍA PROFESIONAL DEL AUTOMOTOR</div>
+
+    <h2 class="hero-main-title">
+      Trámites seguros, ágiles y con atención personalizada.
+    </h2>
+
+    <p class="hero-main-text">
+      Te acompaño en Mendoza y en todo el país para resolver trámites del automotor con confianza, rapidez
+      y asesoramiento claro. Antes de comprar o vender un vehículo, consultá con una profesional y evitá
+      errores que después cuestan tiempo y dinero.
+    </p>
+
+    <div class="hero-actions hero-actions-custom">
+      <a class="btn btn-primary" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank">
+        Consultar por WhatsApp
+      </a>
+      <a class="btn btn-secondary" href="#servicios">
+        Ver servicios
+      </a>
+    </div>
+  </div>
+</section>
 
   <section class="section center">
     <div class="container">
