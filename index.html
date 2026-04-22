@@ -4,35 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Johanna Salinas | Gestoría del Automotor</title>
-  <meta name="description" content="Gestoría del automotor en Mendoza y todo el país. Transferencias, informes, denuncias, radicación, sellados, asesoramiento y atención por WhatsApp.">
+  <meta name="description" content="Gestoría del automotor en Mendoza y todo el país. Transferencias, informes, denuncias, radicación, sellados, asesoramiento y atención por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --navy:#173b73;
+      --bg:#f4eee8;
+      --bg-2:#fdfbf8;
+      --bg-3:#ffffff;
+      --line:#e8e1d8;
+      --line-strong:#d9cec4;
+      --navy:#173a6a;
       --navy-dark:#102b52;
-      --blue:#2d74db;
-      --blue-soft:#edf4ff;
-      --text:#223f66;
-      --muted:#5c6f87;
-      --green:#168d46;
-      --green-dark:#0f7b3b;
+      --blue:#2d74d2;
+      --blue-soft:#eef4fc;
+      --text:#666d75;
       --white:#ffffff;
-      --line:rgba(15,45,87,.08);
-      --shadow:0 18px 40px rgba(15,45,87,.12);
-      --radius:24px;
-      --max:1180px;
+      --shadow:0 18px 44px rgba(23,58,106,.10);
+      --shadow-strong:0 22px 70px rgba(23,58,106,.12);
+      --radius:28px;
+      --max:1200px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      background:linear-gradient(180deg,#f8fbff 0%, #eef5ff 100%);
+      background:var(--bg);
+      color:var(--navy);
+      font-family:'Montserrat',sans-serif;
       overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
     h1,h2,h3,h4,p{margin:0}
 
     .container{
@@ -40,75 +46,95 @@
       margin:0 auto;
     }
 
+    .font-title{font-family:'Cormorant Garamond',serif}
+    .font-body{font-family:'Montserrat',sans-serif}
+
+    .section{padding:88px 0}
+    .section-white{background:var(--bg-3)}
+    .section-soft{background:var(--bg)}
+    .center{text-align:center}
+
+    .eyebrow{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.35em;
+      color:#2e5fa9;
+    }
+
+    .divider{
+      width:96px;
+      height:1px;
+      background:#9fb1c8;
+      margin:18px auto 0;
+    }
+
+    .title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.7rem,5vw,3.8rem);
+      line-height:.95;
+      color:var(--navy);
+      margin-top:28px;
+    }
+
+    .copy{
+      max-width:860px;
+      margin:28px auto 0;
+      font-size:17px;
+      line-height:1.95;
+      color:var(--text);
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      padding:15px 24px;
-      border-radius:999px;
-      font-weight:700;
-      transition:transform .2s ease, box-shadow .2s ease;
+      border-radius:18px;
+      padding:15px 28px;
+      font-size:17px;
+      font-weight:500;
+      transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
       cursor:pointer;
     }
+
     .btn:hover{transform:translateY(-2px)}
 
     .btn-primary{
+      background:var(--navy);
       color:#fff;
-      background:linear-gradient(135deg,var(--green),var(--green-dark));
-      box-shadow:0 14px 28px rgba(22,141,70,.24);
+      box-shadow:0 10px 24px rgba(23,58,106,.16);
     }
 
     .btn-secondary{
-      color:var(--navy-dark);
-      background:#fff;
-      border:1px solid rgba(15,45,87,.10);
+      background:rgba(255,255,255,.75);
+      color:var(--navy);
+      border:1px solid #54729a;
+    }
+
+    .card,
+    .service,
+    .vehicle,
+    .testimonial,
+    .faq,
+    .contact-card,
+    .warning,
+    .protect{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
 
-    .section{padding:82px 0}
-    .center{text-align:center}
-
-    .eyebrow{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(45,116,219,.10);
-      color:var(--blue);
-      font-size:13px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-    }
-
-    .section-title{
-      font-size:clamp(1.9rem, 4vw, 3rem);
-      line-height:1.08;
-      letter-spacing:-.03em;
-      color:var(--navy-dark);
-      margin:16px 0 14px;
-    }
-
-    .section-copy{
-      color:var(--muted);
-      line-height:1.8;
-      font-size:1.03rem;
-      max-width:760px;
-      margin:0 auto;
-    }
-
-    /* NAV */
-    .nav{
+    /* HEADER */
+    .header{
       position:sticky;
       top:0;
-      z-index:1000;
-      background:rgba(255,255,255,.94);
+      z-index:999;
+      background:rgba(244,238,232,.95);
       backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
+      border-bottom:1px solid var(--line-strong);
     }
 
-    .nav-wrap{
-      min-height:88px;
+    .header-inner{
+      min-height:86px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -118,93 +144,84 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:16px;
       min-width:0;
     }
 
-    .brand-logo-wrap{
-      display:flex;
-      align-items:flex-end;
-      gap:8px;
+    .brand-logo{
+      position:relative;
+      width:86px;
+      height:66px;
       flex:0 0 auto;
-    }
-
-    .brand-js{
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:3.3rem;
-      line-height:.75;
-      letter-spacing:-.08em;
+      font-family:'Cormorant Garamond',serif;
+      font-size:64px;
+      font-weight:600;
+      line-height:.8;
+      letter-spacing:-.05em;
       color:var(--navy);
-      font-weight:700;
     }
 
-    .brand-js .s{
-      color:var(--blue);
+    .brand-logo .j{position:absolute;left:0;top:0}
+    .brand-logo .s{position:absolute;left:36px;top:1px;color:var(--blue)}
+    .brand-logo svg{
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:96px;
+      height:28px;
     }
 
-    .brand-copy{
-      display:flex;
-      flex-direction:column;
-      gap:3px;
-    }
-
-    .brand-copy strong{
+    .brand-text strong{
       display:block;
-      color:var(--navy-dark);
-      font-size:1rem;
-      line-height:1.1;
-      letter-spacing:.06em;
-      font-family:Georgia, "Times New Roman", serif;
+      font-family:'Cormorant Garamond',serif;
+      font-size:28px;
       font-weight:500;
+      letter-spacing:.12em;
+      color:var(--navy);
+      line-height:1;
     }
 
-    .brand-copy span{
-      color:var(--blue);
-      font-size:.75rem;
-      line-height:1.2;
-      letter-spacing:.26em;
+    .brand-text span{
+      display:block;
+      margin-top:7px;
+      font-size:11px;
       text-transform:uppercase;
-      font-weight:700;
+      letter-spacing:.35em;
+      color:#4375c8;
     }
 
-    .menu{
+    .nav{
       display:flex;
       align-items:center;
-      gap:26px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+      gap:30px;
     }
 
-    .menu a.link{
-      color:var(--text);
-      font-size:.98rem;
-      font-weight:600;
-      opacity:.95;
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:15px;
+      color:var(--navy);
     }
 
-    .menu a.link:hover{color:var(--blue)}
+    .nav-links a{transition:opacity .25s ease}
+    .nav-links a:hover{opacity:.7}
 
-    .btn-top{
-      padding:14px 24px;
-      background:linear-gradient(135deg,var(--green),var(--green-dark));
-      color:#fff;
-      box-shadow:0 12px 24px rgba(22,141,70,.22);
+    .mobile-toggle{
+      display:none;
+      background:none;
+      border:none;
+      color:var(--navy);
+      font-size:26px;
+      cursor:pointer;
     }
 
-    /* HERO REAL, SIN IMAGEN PEGADA */
+    /* HERO */
     .hero{
       position:relative;
-      min-height:760px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
       overflow:hidden;
-      text-align:center;
-      background:
-        linear-gradient(rgba(241,246,255,.78), rgba(241,246,255,.78)),
-        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=80");
-      background-size:cover;
-      background-position:center;
+      border-bottom:1px solid #e0d6cc;
+      background:linear-gradient(135deg,#f6f0ea 0%,#f4eee8 36%,#e9ddd1 100%);
     }
 
     .hero::before{
@@ -212,637 +229,945 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at left center, rgba(75,145,255,.24), transparent 33%),
-        radial-gradient(circle at center top, rgba(255,255,255,.34), transparent 46%);
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.85), transparent 28%),
+        radial-gradient(circle at 80% 35%, rgba(45,116,210,.08), transparent 24%);
       pointer-events:none;
     }
 
-    .hero-content{
+    .hero-grid{
       position:relative;
       z-index:1;
-      width:min(calc(100% - 32px), 1100px);
-      margin:0 auto;
-      padding:72px 0 80px;
-    }
-
-    .hero-logo-wrap{
-      display:flex;
-      flex-direction:column;
+      min-height:760px;
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
       align-items:center;
-      margin-bottom:24px;
+      gap:50px;
+      padding:96px 0;
     }
 
-    .hero-js{
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(6rem, 12vw, 9rem);
-      line-height:.75;
-      letter-spacing:-.08em;
-      font-weight:700;
-      color:var(--navy);
-    }
-
-    .hero-js .s{
-      color:var(--blue);
-    }
-
-    .hero-car{
-      width:180px;
-      height:22px;
-      position:relative;
-      margin-top:2px;
-      margin-bottom:18px;
-    }
-
-    .hero-car::before{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:2px;
-      height:0;
-      border-bottom:4px solid var(--navy);
-      border-radius:999px;
-      transform:skewX(-18deg);
-    }
-
-    .hero-car::after{
-      content:"";
-      position:absolute;
-      right:28px;
-      top:0;
-      width:42px;
-      height:14px;
-      border-top:4px solid var(--blue);
-      border-right:4px solid var(--blue);
-      transform:skewX(-35deg);
-    }
-
-    .hero-brand{
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(2.5rem, 6vw, 4.4rem);
-      line-height:1;
-      color:var(--navy-dark);
-      letter-spacing:.06em;
-      margin-bottom:10px;
-      font-weight:500;
-    }
-
-    .hero-sub{
-      font-size:.98rem;
-      font-weight:700;
+    .hero-left .kicker{
+      font-size:14px;
+      text-transform:uppercase;
       letter-spacing:.32em;
+      color:#2e5fa9;
+    }
+
+    .hero-left .line{
+      width:96px;
+      height:1px;
+      background:#9fb1c8;
+      margin-top:18px;
+    }
+
+    .hero-left h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(3.3rem,7vw,6.2rem);
+      line-height:.95;
+      color:var(--navy);
+      margin-top:30px;
+    }
+
+    .hero-left h1 em{
+      font-style:italic;
+      font-weight:400;
       color:var(--blue);
-      text-transform:uppercase;
-      margin-bottom:12px;
     }
 
-    .hero-sub2{
-      font-size:.95rem;
-      letter-spacing:.18em;
-      color:#586c86;
-      text-transform:uppercase;
-    }
-
-    .hero-kicker{
-      margin:34px 0 20px;
-      font-size:1rem;
-      letter-spacing:.24em;
-      color:#586c86;
-      text-transform:uppercase;
-    }
-
-    .hero-title{
-      max-width:980px;
-      margin:0 auto 22px;
-      font-size:clamp(2.4rem, 5vw, 4.8rem);
-      line-height:1.08;
-      letter-spacing:-.03em;
-      color:var(--navy-dark);
-      font-weight:800;
-    }
-
-    .hero-text{
-      max-width:1020px;
-      margin:0 auto;
-      color:#4d617b;
-      line-height:1.75;
-      font-size:1.08rem;
+    .hero-left p{
+      max-width:760px;
+      margin-top:28px;
+      font-size:19px;
+      line-height:1.95;
+      color:#5e666f;
     }
 
     .hero-actions{
       display:flex;
-      justify-content:center;
       flex-wrap:wrap;
-      gap:18px;
+      gap:14px;
       margin-top:34px;
     }
 
-    .hero-actions .btn{
-      min-width:240px;
+    .hero-visual{
+      position:relative;
+      z-index:1;
     }
 
-    /* GRID */
-    .services-grid,
-    .vehicle-grid,
-    .testimonial-grid,
-    .faq-grid,
-    .contact-grid{
+    .visual-frame{
+      overflow:hidden;
+      border-radius:34px;
+      background:rgba(255,255,255,.6);
+      padding:12px;
+      backdrop-filter:blur(10px);
+      box-shadow:var(--shadow-strong);
+    }
+
+    .visual-image{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      min-height:540px;
+    }
+
+    .visual-image img{
+      width:100%;
+      height:540px;
+      object-fit:cover;
+    }
+
+    .visual-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(23,58,106,.08), rgba(23,58,106,.45));
+    }
+
+    .visual-content{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:1;
+      padding:34px;
+      color:#fff;
+    }
+
+    .visual-content h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:43px;
+      line-height:.95;
+    }
+
+    .visual-content p{
+      margin-top:12px;
+      max-width:520px;
+      font-size:15px;
+      line-height:1.8;
+      color:rgba(255,255,255,.9);
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .badges span{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.30);
+      background:rgba(255,255,255,.10);
+    }
+
+    /* WARNING */
+    .warning-grid{
       display:grid;
-      gap:22px;
-      margin-top:34px;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      margin-top:56px;
     }
 
-    .services-grid{grid-template-columns:repeat(3,1fr)}
-    .vehicle-grid{grid-template-columns:repeat(4,1fr)}
-    .testimonial-grid{grid-template-columns:repeat(3,1fr)}
-    .faq-grid{grid-template-columns:repeat(2,1fr)}
-    .contact-grid{grid-template-columns:repeat(3,1fr)}
-
-    .service,
-    .vehicle,
-    .testimonial,
-    .faq,
-    .contact-card{
-      background:rgba(255,255,255,.95);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+    .warning,
+    .protect{
+      padding:34px;
+      text-align:left;
     }
 
-    .service,
-    .testimonial,
-    .faq,
-    .contact-card{
-      padding:28px;
+    .warning{
+      background:linear-gradient(145deg,#fff9f3,#ffffff);
+      border-color:#e7d8c8;
     }
 
-    .icon{
-      width:52px;
-      height:52px;
-      border-radius:16px;
+    .protect{
+      background:linear-gradient(145deg,#102b52,#173a6a);
+      border-color:#1d467f;
+      color:#fff;
+    }
+
+    .icon-box{
+      width:56px;
+      height:56px;
       display:grid;
       place-items:center;
-      background:linear-gradient(135deg, rgba(105,179,255,.20), rgba(45,116,219,.09));
-      color:var(--blue);
-      font-weight:800;
-      margin-bottom:16px;
-      font-size:1.1rem;
+      border-radius:18px;
+      font-size:24px;
+      margin-bottom:20px;
+    }
+
+    .warning .icon-box{
+      background:#fff1e3;
+      color:#d97706;
+    }
+
+    .protect .icon-box{
+      background:rgba(255,255,255,.15);
+      color:#fff;
+    }
+
+    .warning h3,
+    .protect h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:38px;
+      line-height:.95;
+    }
+
+    .warning p,
+    .protect p{
+      margin-top:14px;
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .warning p{color:var(--text)}
+    .protect p{color:rgba(255,255,255,.85)}
+
+    .check-list{
+      list-style:none;
+      padding:0;
+      margin:20px 0 0;
+      display:grid;
+      gap:14px;
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .warning .check-list li{color:var(--text)}
+    .protect .check-list li{color:rgba(255,255,255,.85)}
+
+    /* SERVICES */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+      margin-top:56px;
+    }
+
+    .service{
+      background:var(--bg-2);
+      padding:34px;
+      text-align:left;
+    }
+
+    .service-number,
+    .highlight-icon{
+      width:56px;
+      height:56px;
+      display:grid;
+      place-items:center;
+      border-radius:18px;
+      background:var(--blue-soft);
+      color:#2e5fa9;
+      font-weight:600;
+      font-size:18px;
     }
 
     .service h3,
-    .faq h4,
+    .highlight h3,
+    .vehicle h3,
+    .testimonial .name,
+    .faq h3,
     .contact-card h3{
-      color:var(--navy-dark);
-      margin-bottom:12px;
+      font-family:'Cormorant Garamond',serif;
+      color:var(--navy);
+      line-height:.95;
     }
 
-    .service p,
-    .faq p,
-    .contact-card p{
-      color:var(--muted);
-      line-height:1.75;
+    .service h3{
+      margin-top:24px;
+      font-size:38px;
     }
 
     .service ul{
       list-style:none;
       padding:0;
-      margin:16px 0 0;
+      margin:22px 0 0;
       display:grid;
-      gap:10px;
+      gap:14px;
+      color:var(--text);
+      font-size:16px;
+      line-height:1.8;
     }
 
-    .service li{
-      color:var(--muted);
-      line-height:1.65;
-      display:flex;
-      gap:10px;
-    }
-
-    .service li::before{
-      content:"✔";
-      color:var(--blue);
-      font-weight:800;
-      flex:0 0 auto;
+    /* VEHICLES */
+    .vehicles-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:28px;
+      margin-top:56px;
     }
 
     .vehicle{
       overflow:hidden;
-      padding:0;
-      text-align:center;
+      background:#fff;
+      text-align:left;
     }
 
     .vehicle img{
       width:100%;
-      height:180px;
+      height:230px;
       object-fit:cover;
     }
 
-    .vehicle-body{
-      padding:22px;
+    .vehicle-body{padding:26px}
+
+    .vehicle h3{font-size:35px}
+
+    .vehicle p{
+      margin-top:14px;
+      color:var(--text);
+      font-size:16px;
+      line-height:1.8;
     }
 
-    .vehicle-body b{
-      display:block;
-      color:var(--navy-dark);
-      font-size:1.08rem;
-      margin-bottom:8px;
+    /* HIGHLIGHTS */
+    .highlights-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+      margin-top:56px;
     }
 
-    .vehicle-body p{
-      color:var(--muted);
-      line-height:1.7;
-      margin:0;
+    .highlight{
+      background:var(--bg-2);
+      padding:34px;
+      text-align:center;
+    }
+
+    .highlight-icon{margin:0 auto}
+
+    .highlight h3{
+      margin-top:24px;
+      font-size:38px;
+    }
+
+    .highlight p{
+      margin-top:18px;
+      color:var(--text);
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .cta-band{
+      margin-top:56px;
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      align-items:center;
+      gap:26px;
+      padding:42px 46px;
+      border-radius:34px;
+      color:#fff;
+      background:linear-gradient(135deg,#102b52,#2d74d2);
+      box-shadow:0 18px 50px rgba(16,43,82,.18);
+    }
+
+    .cta-band h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:48px;
+      line-height:.95;
+    }
+
+    .cta-band p{
+      margin-top:16px;
+      color:rgba(255,255,255,.85);
+      font-size:16px;
+      line-height:1.9;
+    }
+
+    .cta-band .cta-action{
+      display:flex;
+      justify-content:center;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+      margin-top:56px;
     }
 
     .testimonial{
       position:relative;
-    }
-
-    .testimonial::before{
-      content:"“";
-      position:absolute;
-      top:18px;
-      right:20px;
-      font-size:54px;
-      color:rgba(45,116,219,.12);
-      line-height:1;
-      font-weight:800;
+      background:#fff;
+      padding:34px;
+      text-align:left;
     }
 
     .stars{
-      color:#f7b500;
-      letter-spacing:2px;
-      font-size:1rem;
-      margin-bottom:12px;
+      font-size:14px;
+      letter-spacing:.3em;
+      color:#d4a017;
     }
 
     .testimonial p{
-      color:var(--muted);
-      line-height:1.75;
+      margin-top:18px;
+      color:var(--text);
+      font-size:16px;
+      line-height:2;
     }
 
-    .testimonial strong{
-      display:block;
-      color:var(--navy-dark);
-      margin-top:16px;
+    .testimonial .name{
+      margin-top:24px;
+      font-size:34px;
     }
 
-    .testimonial span{
-      color:var(--muted);
-      font-size:.94rem;
+    .testimonial .role{
+      margin-top:8px;
+      color:#7b848d;
+      font-size:14px;
+    }
+
+    /* FAQ */
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:28px;
+      margin-top:56px;
+    }
+
+    .faq{
+      background:var(--bg-2);
+      padding:34px;
+      text-align:left;
+    }
+
+    .faq h3{font-size:35px}
+
+    .faq p{
+      margin-top:18px;
+      color:var(--text);
+      font-size:16px;
+      line-height:2;
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+      margin-top:56px;
+    }
+
+    .contact-card{
+      background:#fff;
+      padding:34px;
+      text-align:left;
     }
 
     .contact-card small{
       display:block;
-      color:var(--blue);
+      font-size:12px;
       text-transform:uppercase;
-      letter-spacing:.05em;
-      font-weight:700;
-      margin-bottom:8px;
+      letter-spacing:.3em;
+      color:#2e5fa9;
+      font-weight:600;
     }
 
+    .contact-card h3{
+      margin-top:16px;
+      font-size:38px;
+    }
+
+    .contact-card p{
+      margin-top:18px;
+      color:var(--text);
+      font-size:16px;
+      line-height:2;
+    }
+
+    .contact-action{margin-top:34px}
+
+    /* FOOTER */
     .footer{
-      margin-top:42px;
-      background:var(--navy-dark);
-      color:rgba(255,255,255,.82);
-      padding:28px 0 40px;
+      background:#102b52;
+      color:rgba(255,255,255,.8);
+      padding:38px 0;
     }
 
-    .footer-wrap{
+    .footer-inner{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:18px;
+      gap:20px;
       flex-wrap:wrap;
     }
 
+    .footer-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:32px;
+      color:#fff;
+      line-height:1;
+    }
+
+    .footer-sub{
+      margin-top:8px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      color:rgba(255,255,255,.7);
+    }
+
+    .footer-right{
+      font-size:14px;
+      color:rgba(255,255,255,.75);
+    }
+
+    /* FLOATING */
     .wa-float{
       position:fixed;
-      right:18px;
-      bottom:18px;
-      z-index:120;
-      width:72px;
-      height:72px;
+      right:20px;
+      bottom:20px;
+      z-index:998;
+      width:64px;
+      height:64px;
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:linear-gradient(135deg,var(--green),#16ba58);
+      background:var(--navy);
       color:#fff;
-      font-size:1.8rem;
-      box-shadow:0 18px 34px rgba(37,211,102,.28);
-      animation:pulse 2.2s infinite;
+      font-size:28px;
+      box-shadow:0 18px 34px rgba(23,58,106,.28);
+      transition:transform .25s ease;
     }
 
-    @keyframes pulse{
-      0%{transform:scale(1);box-shadow:0 18px 34px rgba(37,211,102,.28)}
-      50%{transform:scale(1.05);box-shadow:0 22px 38px rgba(37,211,102,.34)}
-      100%{transform:scale(1);box-shadow:0 18px 34px rgba(37,211,102,.28)}
-    }
+    .wa-float:hover{transform:scale(1.06)}
 
-    @media (max-width:1100px){
+    /* RESPONSIVE */
+    @media (max-width: 1100px){
+      .hero-grid,
+      .warning-grid,
+      .cta-band,
       .services-grid,
-      .testimonial-grid,
-      .contact-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-      .vehicle-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-    }
-
-    @media (max-width:760px){
-      .menu{
-        justify-content:center;
-      }
-
-      .menu .link{
-        display:none;
-      }
-
-      .nav-wrap{
-        flex-direction:column;
-        padding:14px 0;
-      }
-
-      .services-grid,
-      .vehicle-grid,
-      .testimonial-grid,
-      .faq-grid,
+      .highlights-grid,
+      .testimonials-grid,
       .contact-grid{
         grid-template-columns:1fr;
       }
 
-      .section{padding:68px 0}
+      .vehicles-grid{grid-template-columns:repeat(2,1fr)}
+      .faq-grid{grid-template-columns:1fr}
+      .hero-grid{min-height:auto}
+      .cta-band .cta-action{justify-content:flex-start}
+    }
 
-      .wa-float{
-        width:62px;
-        height:62px;
+    @media (max-width: 900px){
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:86px;
+        left:16px;
+        right:16px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+        background:rgba(244,238,232,.98);
+        border:1px solid var(--line-strong);
+        border-radius:22px;
+        padding:22px;
+        box-shadow:var(--shadow);
       }
 
-      .brand-js{
-        font-size:2.8rem;
-      }
+      .nav-links.open{display:flex}
+      .mobile-toggle{display:block}
+      .nav .btn-primary{display:none}
+      .header-inner{min-height:78px}
+    }
 
-      .hero{
-        min-height:auto;
-      }
-
-      .hero-content{
-        padding:50px 0 56px;
-      }
-
-      .hero-kicker{
-        font-size:.82rem;
-        letter-spacing:.14em;
-      }
-
-      .hero-sub{
-        font-size:.78rem;
-        letter-spacing:.18em;
-      }
-
-      .hero-sub2{
-        font-size:.8rem;
-        letter-spacing:.10em;
-      }
-
-      .hero-text{
-        font-size:1rem;
-      }
-
-      .hero-actions .btn{
-        min-width:unset;
-        width:100%;
-      }
+    @media (max-width: 760px){
+      .section{padding:70px 0}
+      .container{width:min(calc(100% - 24px), var(--max))}
+      .brand-logo{width:74px;height:58px;font-size:56px}
+      .brand-logo .s{left:30px}
+      .brand-logo svg{width:82px;height:24px}
+      .brand-text strong{font-size:22px}
+      .brand-text span{font-size:10px;letter-spacing:.24em}
+      .hero-grid{padding:64px 0 72px}
+      .hero-left p{font-size:17px}
+      .visual-image,
+      .visual-image img{min-height:420px;height:420px}
+      .visual-content h3{font-size:34px}
+      .warning,
+      .protect,
+      .service,
+      .highlight,
+      .testimonial,
+      .faq,
+      .contact-card{padding:28px}
+      .vehicles-grid{grid-template-columns:1fr}
+      .wa-float{width:58px;height:58px;font-size:24px;right:16px;bottom:16px}
     }
   </style>
 </head>
 <body>
-
-  <nav class="nav">
-    <div class="container nav-wrap">
+  <header class="header">
+    <div class="container header-inner">
       <div class="brand">
-        <div class="brand-logo-wrap">
-          <div class="brand-js">J<span class="s">S</span></div>
+        <div class="brand-logo" aria-hidden="true">
+          <span class="j">J</span>
+          <span class="s">S</span>
+          <svg viewBox="0 0 160 42" fill="none">
+            <path d="M2 30C26 38 43 33 58 26C73 19 86 18 98 21C109 24 125 31 158 26" stroke="#173a6a" stroke-width="5" stroke-linecap="round"/>
+            <path d="M4 35C30 39 56 38 86 30C100 26 116 25 142 28" stroke="#2d74d2" stroke-width="3" stroke-linecap="round"/>
+            <path d="M78 28C86 21 95 20 104 26" stroke="#2d74d2" stroke-width="3" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="brand-copy">
+        <div class="brand-text">
           <strong>JOHANNA SALINAS</strong>
-          <span>MANDATARIA NACIONAL</span>
+          <span>Mandataria Nacional</span>
         </div>
       </div>
 
-      <div class="menu">
-        <a class="link" href="#servicios">Servicios</a>
-        <a class="link" href="#vehiculos">Vehículos</a>
-        <a class="link" href="#testimonios">Testimonios</a>
-        <a class="link" href="#contacto">Contacto</a>
-        <a class="btn btn-top" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank">WhatsApp</a>
-      </div>
+      <nav class="nav">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#servicios">Servicios</a>
+          <a href="#vehiculos">Vehículos</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#faq">Preguntas frecuentes</a>
+          <a href="#contacto">Contacto</a>
+          <a href="https://wa.me/5492616546801?text=Hola%20Johanna,%20quisiera%20hacer%20una%20consulta%20sobre%20un%20tr%C3%A1mite%20del%20automotor" target="_blank" rel="noreferrer" class="btn btn-primary">WhatsApp</a>
+        </div>
+        <a href="https://wa.me/5492616546801?text=Hola%20Johanna,%20quisiera%20hacer%20una%20consulta%20sobre%20un%20tr%C3%A1mite%20del%20automotor" target="_blank" rel="noreferrer" class="btn btn-primary">WhatsApp</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <div class="hero-logo-wrap">
-        <div class="hero-js">J<span class="s">S</span></div>
-        <div class="hero-car"></div>
-        <div class="hero-brand">JOHANNA SALINAS</div>
-        <div class="hero-sub">MANDATARIA NACIONAL</div>
-        <div class="hero-sub2">GESTORÍA DEL AUTOMOTOR</div>
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="kicker">Gestoría profesional del automotor</div>
+        <div class="line"></div>
+
+        <h1>
+          Trámites seguros,<br>
+          ágiles y con atención<br>
+          <em>personalizada.</em>
+        </h1>
+
+        <p>
+          Te acompaño en Mendoza y en todo el país para resolver trámites del automotor con confianza, rapidez y asesoramiento claro. Antes de comprar o vender un vehículo, consultá con una profesional y evitá errores que después cuestan tiempo y dinero.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5492616546801?text=Hola%20Johanna,%20quisiera%20hacer%20una%20consulta%20sobre%20un%20tr%C3%A1mite%20del%20automotor" target="_blank" rel="noreferrer" class="btn btn-primary">Consultar por WhatsApp</a>
+          <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+        </div>
       </div>
 
-      <div class="hero-kicker">GESTORÍA PROFESIONAL DEL AUTOMOTOR</div>
-
-      <h1 class="hero-title">Trámites seguros, ágiles y con atención personalizada.</h1>
-
-      <p class="hero-text">
-        Te acompaño en Mendoza y en todo el país para resolver trámites del automotor con confianza, rapidez
-        y asesoramiento claro. Antes de comprar o vender un vehículo, consultá con una profesional y evitá errores
-        que después cuestan tiempo y dinero.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank">
-          Consultar por WhatsApp
-        </a>
-        <a class="btn btn-secondary" href="#servicios">
-          Ver servicios
-        </a>
+      <div class="hero-visual">
+        <div class="visual-frame">
+          <div class="visual-image">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80" alt="Gestoría del automotor" />
+            <div class="visual-content">
+              <h3>Gestoría moderna y confiable</h3>
+              <p>Atención clara, acompañamiento real y una imagen profesional para cada trámite.</p>
+              <div class="badges">
+                <span>Transferencias</span>
+                <span>Informes</span>
+                <span>Denuncias</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section center" id="servicios">
+  <section class="section section-soft center">
     <div class="container">
-      <span class="eyebrow">Servicios</span>
-      <h2 class="section-title">Todo lo que necesitás en un solo lugar.</h2>
-      <p class="section-copy">
+      <div class="eyebrow">Tu diferencial</div>
+      <div class="divider"></div>
+      <h2 class="title">Antes de comprar o vender un vehículo, asesorate con una profesional.</h2>
+      <p class="copy">
+        Muchas personas venden mal y siguen siendo responsables del vehículo sin saberlo. Otras compran sin revisar la situación registral y terminan con deudas, problemas legales o trámites trabados. Mi trabajo es ayudarte a hacer las cosas bien desde el principio.
+      </p>
+
+      <div class="warning-grid">
+        <div class="warning">
+          <div class="icon-box">!</div>
+          <h3>Errores frecuentes al comprar o vender</h3>
+          <ul class="check-list">
+            <li>✔ Vender sin dejar correctamente registrada la operación.</li>
+            <li>✔ Comprar sin revisar informes, estado del dominio o infracciones.</li>
+            <li>✔ No hacer la transferencia a tiempo.</li>
+            <li>✔ No consultar antes con un gestor de confianza.</li>
+          </ul>
+        </div>
+
+        <div class="protect">
+          <div class="icon-box">✓</div>
+          <h3>¿Cómo te ayudo?</h3>
+          <p>Te acompaño para que la operación sea clara, segura y bien hecha.</p>
+          <ul class="check-list">
+            <li>✔ Verificación de situación del vehículo.</li>
+            <li>✔ Asesoramiento previo a la compra o venta.</li>
+            <li>✔ Acompañamiento en todo el proceso.</li>
+            <li>✔ Gestión completa con atención personalizada.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="section section-white center">
+    <div class="container">
+      <div class="eyebrow">Servicios</div>
+      <div class="divider"></div>
+      <h2 class="title">Todo lo que necesitás en un solo lugar.</h2>
+      <p class="copy">
         Gestoría integral del automotor con asesoramiento personalizado, atención flexible y foco en resolver bien cada trámite.
       </p>
 
       <div class="services-grid">
-        <div class="service">
-          <div class="icon">01</div>
+        <article class="service">
+          <div class="service-number">01</div>
           <h3>Transferencias y operaciones</h3>
           <ul>
-            <li>Transferencias</li>
-            <li>Denuncia de venta / compra</li>
-            <li>Inscripción inicial</li>
-            <li>Altas y bajas</li>
-            <li>Cambio de radicación</li>
+            <li>✔ Transferencias</li>
+            <li>✔ Denuncia de venta y de compra</li>
+            <li>✔ Inscripción inicial</li>
+            <li>✔ Altas y bajas</li>
+            <li>✔ Cambio de radicación</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="service">
-          <div class="icon">02</div>
+        <article class="service">
+          <div class="service-number">02</div>
           <h3>Informes y documentación</h3>
           <ul>
-            <li>Informes de dominio</li>
-            <li>Informes de infracciones e histórico</li>
-            <li>Duplicado de cédula y título</li>
-            <li>Llenado de formularios</li>
-            <li>Turnos de verificación policial y DNRPA</li>
+            <li>✔ Informes de dominio</li>
+            <li>✔ Informes de infracciones e histórico</li>
+            <li>✔ Duplicado de cédula y título</li>
+            <li>✔ Llenado de formularios</li>
+            <li>✔ Turnos de verificación policial y DNRPA</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="service">
-          <div class="icon">03</div>
+        <article class="service">
+          <div class="service-number">03</div>
           <h3>Trámites especiales</h3>
           <ul>
-            <li>Denuncia de robo</li>
-            <li>Cancelación de prenda</li>
-            <li>Planes de pago de patentes</li>
-            <li>Multas / ATM / SUATS</li>
-            <li>Sellados provinciales</li>
+            <li>✔ Denuncia de robo</li>
+            <li>✔ Cancelación de prenda</li>
+            <li>✔ Planes de pago de patentes</li>
+            <li>✔ Multas / ATM / SUATS</li>
+            <li>✔ Sellados provinciales</li>
           </ul>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section center" id="vehiculos">
+  <section id="vehiculos" class="section section-soft center">
     <div class="container">
-      <span class="eyebrow">Vehículos</span>
-      <h2 class="section-title">Trámites para distintos tipos de vehículos.</h2>
-      <p class="section-copy">
+      <div class="eyebrow">Vehículos</div>
+      <div class="divider"></div>
+      <h2 class="title">Trámites para distintos tipos de vehículos.</h2>
+      <p class="copy">
         Atención profesional para vehículos particulares, utilitarios y maquinaria.
       </p>
 
-      <div class="vehicle-grid">
-        <div class="vehicle">
-          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Auto">
+      <div class="vehicles-grid">
+        <article class="vehicle">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80" alt="Autos" />
           <div class="vehicle-body">
-            <b>Autos</b>
+            <h3>Autos</h3>
             <p>Compra, venta, informes, transferencias y trámites registrales.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="vehicle">
-          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80" alt="Moto">
+        <article class="vehicle">
+          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80" alt="Motos" />
           <div class="vehicle-body">
-            <b>Motos</b>
+            <h3>Motos</h3>
             <p>Gestión completa con atención rápida y personalizada.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="vehicle">
-          <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80" alt="Camión">
+        <article class="vehicle">
+          <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80" alt="Camiones" />
           <div class="vehicle-body">
-            <b>Camiones</b>
+            <h3>Camiones</h3>
             <p>Trámites y asesoramiento para unidades de trabajo.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="vehicle">
-          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=900&q=80" alt="Maquinaria vial">
+        <article class="vehicle">
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80" alt="Maquinaria vial" />
           <div class="vehicle-body">
-            <b>Maquinaria vial</b>
+            <h3>Maquinaria vial</h3>
             <p>Atención para documentación y gestiones específicas.</p>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white center">
+    <div class="container">
+      <div class="eyebrow">¿Por qué elegirme?</div>
+      <div class="divider"></div>
+      <h2 class="title">Una atención pensada para darte tranquilidad.</h2>
+      <p class="copy">
+        La confianza se construye con claridad, compromiso y seguimiento real de cada caso.
+      </p>
+
+      <div class="highlights-grid">
+        <article class="highlight card">
+          <div class="highlight-icon">✦</div>
+          <h3>Asesoramiento sin costo</h3>
+          <p>Podés consultar antes de avanzar para tomar decisiones con más seguridad.</p>
+        </article>
+
+        <article class="highlight card">
+          <div class="highlight-icon">✦</div>
+          <h3>Atención ágil</h3>
+          <p>Resolución rápida de dudas, urgencias y pasos necesarios para cada trámite.</p>
+        </article>
+
+        <article class="highlight card">
+          <div class="highlight-icon">✦</div>
+          <h3>WhatsApp directo</h3>
+          <p>Tu contacto más simple: un clic y ya podés escribirme con mensaje automático.</p>
+        </article>
+      </div>
+
+      <div class="cta-band">
+        <div>
+          <h3>¿Necesitás resolver un trámite o querés asesorarte antes de comprar o vender?</h3>
+          <p>Escribime por WhatsApp y te ayudo a hacer el trámite de forma clara, segura y sin complicaciones.</p>
+        </div>
+        <div class="cta-action">
+          <a href="https://wa.me/5492616546801?text=Hola%20Johanna,%20quisiera%20hacer%20una%20consulta%20sobre%20un%20tr%C3%A1mite%20del%20automotor" target="_blank" rel="noreferrer" class="btn btn-secondary" style="background:#fff;border:none;">Enviar WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section center" id="testimonios">
+  <section id="testimonios" class="section section-soft center">
     <div class="container">
-      <span class="eyebrow">Testimonios</span>
-      <h2 class="section-title">Confianza que se transmite en cada experiencia.</h2>
-      <p class="section-copy">
-        Después podemos reemplazar estos testimonios por los reales de tus clientes.
+      <div class="eyebrow">Testimonios</div>
+      <div class="divider"></div>
+      <h2 class="title">Confianza que se transmite en cada experiencia.</h2>
+      <p class="copy">
+        Acá te dejé testimonios modelo para que después los puedas cambiar por los reales de tus clientes.
       </p>
 
-      <div class="testimonial-grid">
-        <div class="testimonial">
+      <div class="testimonials-grid">
+        <article class="testimonial">
           <div class="stars">★★★★★</div>
           <p>“Excelente atención. Me ayudó en todo el proceso de transferencia y me explicó cada paso con mucha claridad.”</p>
-          <strong>María G.</strong>
-          <span>Cliente particular</span>
-        </div>
+          <div class="name">María G.</div>
+          <div class="role">Cliente particular</div>
+        </article>
 
-        <div class="testimonial">
+        <article class="testimonial">
           <div class="stars">★★★★★</div>
           <p>“Consulté antes de comprar un vehículo y fue la mejor decisión. Me evitó problemas y me dio mucha tranquilidad.”</p>
-          <strong>Lucas R.</strong>
-          <span>Compra de vehículo</span>
-        </div>
+          <div class="name">Lucas R.</div>
+          <div class="role">Compra de vehículo</div>
+        </article>
 
-        <div class="testimonial">
+        <article class="testimonial">
           <div class="stars">★★★★★</div>
           <p>“Rápida, profesional y muy amable. Todo lo resolví por WhatsApp de manera simple.”</p>
-          <strong>Daniela P.</strong>
-          <span>Trámite registral</span>
-        </div>
+          <div class="name">Daniela P.</div>
+          <div class="role">Trámite registral</div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section center" id="contacto">
+  <section id="faq" class="section section-white center">
     <div class="container">
-      <span class="eyebrow">Contacto</span>
-      <h2 class="section-title">Estoy para ayudarte.</h2>
-      <p class="section-copy">
-        Escribime y contame qué trámite necesitás resolver. Te respondo por WhatsApp.
-      </p>
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <div class="divider"></div>
+      <h2 class="title">Información clara para quienes necesitan resolver rápido.</h2>
+
+      <div class="faq-grid">
+        <article class="faq">
+          <h3>¿Atendés solo en Mendoza?</h3>
+          <p>No. Atiendo en Mendoza y también realizo gestiones y asesoramiento para clientes de todo el país.</p>
+        </article>
+
+        <article class="faq">
+          <h3>¿Puedo consultarte antes de comprar o vender?</h3>
+          <p>Sí. De hecho, es lo más recomendable para evitar errores, deudas, demoras y problemas futuros.</p>
+        </article>
+
+        <article class="faq">
+          <h3>¿Trabajás con urgencias?</h3>
+          <p>Sí. Si necesitás resolver algo con rapidez, podés escribirme por WhatsApp y te respondo a la brevedad.</p>
+        </article>
+
+        <article class="faq">
+          <h3>¿Qué tipos de vehículos trabajás?</h3>
+          <p>Autos, motos, camiones y maquinaria vial.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section section-soft center">
+    <div class="container">
+      <div class="eyebrow">Contacto</div>
+      <div class="divider"></div>
+      <h2 class="title">Estoy para ayudarte.</h2>
+      <p class="copy">Escribime y contame qué trámite necesitás resolver. Te respondo por WhatsApp.</p>
 
       <div class="contact-grid">
-        <div class="contact-card">
+        <article class="contact-card">
           <small>WhatsApp</small>
           <h3>2616546801</h3>
           <p>Contacto directo con mensaje automático listo para enviar.</p>
-        </div>
+        </article>
 
-        <div class="contact-card">
+        <article class="contact-card">
           <small>Cobertura</small>
           <h3>Mendoza y todo el país</h3>
           <p>Atención flexible para consultas, asesoramiento y gestiones.</p>
-        </div>
+        </article>
 
-        <div class="contact-card">
+        <article class="contact-card">
           <small>Disponibilidad</small>
           <h3>Atención por WhatsApp</h3>
           <p>Podés escribir en cualquier momento. Respuesta a la brevedad.</p>
-        </div>
+        </article>
       </div>
 
-      <div style="margin-top:28px">
-        <a class="btn btn-primary" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank">Hablar por WhatsApp</a>
+      <div class="contact-action">
+        <a href="https://wa.me/5492616546801?text=Hola%20Johanna,%20quisiera%20hacer%20una%20consulta%20sobre%20un%20tr%C3%A1mite%20del%20automotor" target="_blank" rel="noreferrer" class="btn btn-primary">Hablar por WhatsApp</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container footer-wrap">
+    <div class="container footer-inner">
       <div>
-        <strong style="display:block; margin-bottom:6px; color:#fff;">Johanna Salinas</strong>
-        <span>Mandataria Nacional · Gestoría del Automotor</span>
+        <div class="footer-title">Johanna Salinas</div>
+        <div class="footer-sub">Mandataria Nacional · Gestoría del Automotor</div>
       </div>
-      <div>
-        <span>Atención en Mendoza y todo el país · WhatsApp: 2616546801</span>
-      </div>
+      <div class="footer-right">Atención en Mendoza y todo el país · WhatsApp: 2616546801</div>
     </div>
   </footer>
 
-  <a class="wa-float" href="https://wa.me/542616546801?text=Hola%20quiero%20consultar%20por%20un%20tr%C3%A1mite%20del%20automotor" target="_blank" aria-label="WhatsApp">✆</a>
+  <a href="https://wa.me/5492616546801?text=Hola%20Johanna,%20quisiera%20hacer%20una%20consulta%20sobre%20un%20tr%C3%A1mite%20del%20automotor" target="_blank" rel="noreferrer" class="wa-float" aria-label="WhatsApp">✆</a>
+
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
